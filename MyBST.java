@@ -2,8 +2,8 @@ import java.util.*;
 
 public class MyBST<E extends Comparable<E>> implements MyTree<E> {
 
-  protected TreeNode<E> root;
-  protected int size = 0; // Number of elements in the list
+  private TreeNode<E> root;
+  private int size = 0; // Number of elements in the list
   
   /** Create an empty list */
   public MyBST() {
@@ -25,16 +25,7 @@ public class MyBST<E extends Comparable<E>> implements MyTree<E> {
   //POST: if tree is found return true, else return false
 
   public boolean search(E e){
-    TreeNode<E> current = root;
-    //System.out.println("\tTASK 1: Code search method");
-    while (current != null){
-      if (e.compareTo(current.element) < 0)
-        current = current.left;
-      else if (e.compareTo(current.element) > 0)
-        current = current.right;
-      else 
-        return true;
-    }
+    System.out.println("\tTASK 1: Code search method");
     return false;
   }
 
@@ -55,31 +46,11 @@ public class MyBST<E extends Comparable<E>> implements MyTree<E> {
       size ++;
       return true;
     }
-
+    System.out.println("\tTASK 2: Code insert method");
     //find point of insertion tracking
     //parent & current nodes
-    TreeNode<E> parent = null;
-    TreeNode<E> current = root;
-    while (current != null){
-      if (e.compareTo(current.element) < 0){
-        parent = current;
-        current = current.left;
-      }
-      else if (e.compareTo(current.element) > 0){
-        parent = current;
-        current = current.right;
-      }
-      else
-        return false;  //e is in the tree
-    }
 
-    if (e.compareTo(parent.element) < 0)
-      parent.left = createNewNode(e);
-    else
-      parent.right = createNewNode(e);
-  
-    size ++;
-    return true;
+    return false;
   }
     
 
@@ -100,8 +71,8 @@ public class MyBST<E extends Comparable<E>> implements MyTree<E> {
   //PRE:  none
   //POST: prints tree preOrder
   public String preOrderString(){
-    //return ("TASK 2: Code preOrder");
-    return preOrder(root);
+    return ("TASK 3: Code preOrder");
+    //return preOrder(root);
   }
 
     public String preOrder(TreeNode<E> root){
@@ -115,7 +86,8 @@ public class MyBST<E extends Comparable<E>> implements MyTree<E> {
   //PRE:  none
   //POST: prints tree postOrder
   public String postOrderString(){
-    return postOrder(root);
+    return ("TASK 4: Code postOrder");
+    //return postOrder(root);
   }
     public String postOrder(TreeNode<E> root){
     if (root == null) 
@@ -222,21 +194,9 @@ public class MyBST<E extends Comparable<E>> implements MyTree<E> {
 
   public boolean isLeaf(E e){
     TreeNode<E> current = root;
-    //System.out.println("\tTASK 6: code isLeaf method");
-    //return false;
-    while (current != null){
-      if (e.compareTo(current.element) < 0)
-        current = current.left;
-      else if (e.compareTo(current.element) > 0)
-        current = current.right;
-      else{
-        if (current.left == null && current.right == null)
-          return true;
-        else
-          return false;
-      }
-    }
+    System.out.println("\tTASK 6: code isLeaf method");
     return false;
+
   }
 
   //TASK 7: heightWrapper
@@ -249,10 +209,8 @@ public class MyBST<E extends Comparable<E>> implements MyTree<E> {
   }
 
   private int height(TreeNode<E> root){
-    //System.out.println("\tTASK 7: code height method");
-    if (root == null)
-      return 0;
-    return 1 + Math.max(height(root.right), height(root.left));
+    System.out.println("\tTASK 7: code height method");
+    return 0;
   }
 
   //TASK 8: Depth
@@ -264,19 +222,6 @@ public class MyBST<E extends Comparable<E>> implements MyTree<E> {
     TreeNode<E> current = root;
     int depthCount = 0;
     System.out.println("\tTASK 8: code depth method");
-    while (current != null){
-      if (e.compareTo(current.element) < 0){
-        depthCount++;
-        current = current.left;
-      }
-      else if (e.compareTo(current.element) > 0){
-        current = current.right;
-        depthCount++;
-      }
-      else{
-        return depthCount;
-      }
-    }
     return -1;
   }
 
