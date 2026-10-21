@@ -38,6 +38,7 @@ public class Functions {
         System.out.println("\t" + bst1.preOrderString());  
  
         System.out.println("\n4. TESTING POSTORDER METHOD (TASK 4):  ");
+        System.out.println("\t" + bst1.postOrderString());  
 
         System.out.println("\n5. TESTING DELETE METHOD (TASK 5):  ");
         bst1.delete("Theodore");
@@ -70,6 +71,7 @@ public class Functions {
         System.out.println("\tNotFd isLeaf:   " + bst1.isLeaf("Notfd"));  
 
         System.out.println("\n7.  TESTING HEIGHT METHOD (TASK 7):  ");
+        System.out.println("\t" + bst1.preOrderString());  
         System.out.println("\tThe height of the tree is: " + bst1.heightWrapper());  
 
 
